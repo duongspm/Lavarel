@@ -84,4 +84,8 @@ class MyController extends Controller
     {
         return view('myView',['t'=>$t]); 
     }
+    public function index()
+    {
+        return view('pages.home');
+    }
 }
