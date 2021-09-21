@@ -47,7 +47,7 @@
                 </li>
                 <li>
                     <a class="show-cat-btn" href="##">
-                        <span class="icon document" aria-hidden="true"></span>Posts
+                        <span class="icon document" aria-hidden="true"></span>Brand
                         <span class="category__btn transparent-btn" title="Open list">
                             <span class="sr-only">Open list</span>
                             <span class="icon arrow-down" aria-hidden="true"></span>
@@ -55,10 +55,10 @@
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="posts.html">All Posts</a>
+                            <a href="{{URL::to('/all-brand-product')}}">All Brand</a>
                         </li>
                         <li>
-                            <a href="new-post.html">Add new post</a>
+                            <a href="{{URL::to('/add-brand-product')}}">Add new Brand</a>
                         </li>
                     </ul>
                 </li>
@@ -81,7 +81,7 @@
                 </li>
                 <li>
                     <a class="show-cat-btn" href="##">
-                        <span class="icon image" aria-hidden="true"></span>Media
+                        <span class="icon image" aria-hidden="true"></span>Product
                         <span class="category__btn transparent-btn" title="Open list">
                             <span class="sr-only">Open list</span>
                             <span class="icon arrow-down" aria-hidden="true"></span>
@@ -89,10 +89,10 @@
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="media-01.html">Media-01</a>
+                            <a href="{{URL::to('/all-product')}}">All Product</a>
                         </li>
                         <li>
-                            <a href="media-02.html">Media-02</a>
+                            <a href="{{URL::to('/add-product')}}">Add new Product</a>
                         </li>
                     </ul>
                 </li>

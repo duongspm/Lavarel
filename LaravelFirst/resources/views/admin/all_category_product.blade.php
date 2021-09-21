@@ -24,17 +24,17 @@
             if($cate_pro->category_status==0)
             {
           ?>
-              <a href="{{URL::to('/unactive-category-product/'.$cate_pro->category_id)}}"><span class="fa fa-thumbs-up"></span></a> 
+              <a href="{{URL::to('/unactive-category-product/'.$cate_pro->category_id)}}"><i style="color:blue" class="far fa-eye"></i></a> 
           <?php 
             }else{
           ?>
-              <a href="{{URL::to('/active-category-product/'.$cate_pro->category_id)}}"><span  style="color:#fff"  class="fa fa-thumbs-down"></span></a>
+              <a href="{{URL::to('/active-category-product/'.$cate_pro->category_id)}}"><i class="far fa-eye-slash"></i></span></a>
           <?php }
           ?>
         </td>
         <td>
-            <a>
-            <a>
+            <a href="{{URL::to('/edit-category-product/'.$cate_pro->category_id)}}"><i class="fas fa-edit"></i></a>
+            <a onclick="return confirm('Xóa giởn hay chơi?? Suy nghĩ lại còn kịp')" href="{{URL::to('/delete-category-product/'.$cate_pro->category_id)}}"><i class="far fa-trash-alt"></i></a>
         </td>
       </tr>
       @endforeach
