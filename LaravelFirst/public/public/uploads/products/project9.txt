@@ -1,0 +1,12 @@
+https://themewagon.com/
+www.flaticon.com
+
+
+cách sửa lỗi    "Target class [HomeController] does not exist." trên laravel 8
+vào đường dẫn:  app\Providers\ RouteServiceProvider.php  
+thêm dòng code này vào trước dòng  "public function boot()" :   protected $namespace = 'App\http\Controllers'; 
+là ok ngay...
+
+
+composer create-project laravel/laravel myproject		// tạo project laravel
+php artisan make:controller Mycontroller			// tạo controller
