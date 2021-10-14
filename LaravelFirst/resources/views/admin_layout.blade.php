@@ -186,7 +186,7 @@
     <div class="main-nav-start">
       <div class="search-wrapper">
         <i data-feather="search" aria-hidden="true"></i>
-        <input type="text" placeholder="Enter keywords ..." required>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
       </div>
     </div>
     <div class="main-nav-end">
@@ -273,7 +273,14 @@
         <ul class="users-item-dropdown nav-user-dropdown dropdown">
           <li><a href="##">
               <i data-feather="user" aria-hidden="true"></i>
-              <span>Profile</span>
+              <span>
+                <?php
+                  $name = Session::get('admin_name');
+                  if($name){
+                    echo $name;
+                  }
+                ?>
+              </span>
             </a></li>
           <li><a href="##">
               <i data-feather="settings" aria-hidden="true"></i>
@@ -310,12 +317,47 @@
 </footer>
   </div>
 </div>
+<!-- Start Search -->
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+<!-- End Search -->
+
 <!-- Chart library -->
 <script src="{{asset('backend/plugins/chart.min.js')}}"></script>
 <!-- Icons library -->
 <script src="{{asset('backend/plugins/feather.min.js')}}"></script>
 <!-- Custom scripts -->
 <script src="{{asset('backend/js/script.js')}}"></script>
+<!-- CKeditor -->
+<!-- <script src="{{asset('backend/js/ckeditor/ckeditor.js')}}"></script> -->
+<script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+<script>
+  CKEDITOR.replace('ckeditor');
+  CKEDITOR.replace('ckeditor1');
+  CKEDITOR.replace('ckeditor2');
+  CKEDITOR.replace('ckeditor3');
+  CKEDITOR.replace('ckeditor4');
+  CKEDITOR.replace('ckeditor5');
+  CKEDITOR.replace('ckeditor6');
+</script>
 </body>
 
 </html>

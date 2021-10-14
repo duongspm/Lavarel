@@ -3,12 +3,16 @@
 <div class="container">
   <h2>Update Category Product</h2>
   @foreach($edit_category_product as $key => $edit_value)
-  <form action="{{URL::to('/update-category-product/'.$edit_value->category_id)}}" method="post">
+  <form action="{{URL::to('/update-category-product/'.$edit_value->category_id)}}" method="post" enctype="multipart/form-data">
   {{csrf_field()}}  
   <div class="form-group">
       <labe>Category Product Name</label>
-      
       <input value="{{$edit_value->category_name}}" type="text" class="form-control" placeholder="Category Product Name" name="category_product_name">
+    </div>
+    <div class="form-group">
+      <labe> Image</label>
+      <input type="file" class="form-control" name="category_image">
+      <img src="{{URL::to('public/uploads/category/'.$edit_value->category_image)}}" width="200" height="200">
     </div>
     <div class="form-group">
       <label for="pwd">Description:</label>
@@ -22,7 +26,7 @@
             <option value="1">Ẩn</option>
         </select>
     </div> -->
-    <button type="submit" name="update_category_product" class="btn btn-primary">Submit</button>
+    <button type="submit" name="update_category_product" class="btn btn-success">Submit</button>
     <?php
     $message = Session::get('message');
     if($message){

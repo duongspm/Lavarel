@@ -18,11 +18,11 @@
     </div>
     <div class="form-group">
       <label for="pwd">Description:</label>
-      <textarea class="form-control" rows="5" placeholder="Description" name="product_desc"></textarea>
+      <textarea id="ckeditor" class="form-control" rows="5" placeholder="Description" name="product_desc"></textarea>
     </div>
     <div class="form-group">
       <label for="pwd">Content:</label>
-      <textarea class="form-control" rows="5" placeholder="Nội dung" name="product_content"></textarea>
+      <textarea  id="ckeditor1" class="form-control" rows="5" placeholder="Nội dung" name="product_content"></textarea>
     </div>
     <div class="form-group form-check">
     <label >Category Product:</label>
@@ -48,7 +48,7 @@
             <option value="1">Nổi bật không</option>
         </select>
     </div>
-    <button type="submit" name="add_product" class="btn btn-primary">Submit</button>
+    <button type="submit" name="add_product" class="btn btn-success">Submit</button>
     <div class="alert alert-success">
       <strong></strong> <?php
     $message = Session::get('message');

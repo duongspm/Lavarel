@@ -101,8 +101,19 @@ Auth::routes();
 // });
 
 //---User
-Route::get('/','MyController@index');
-Route::get('/home','MyController@index');
+Route::get('/','HomeController@index');
+Route::get('/home','HomeController@index');
+Route::get('/all-product','HomeController@all_product');
+
+//Lọc sản phẩm theo category và brand
+//Category nè
+Route::get('/category/{category_id}','CategoryProduct@show_category_home');
+            //danh-muc-san-pham
+//Brand nè
+Route::get('/brand/{brand_id}','BrandProduct@show_brand_home');
+//Product-details
+Route::get('/product-details/{product_id}','ProductController@product_details');
+Route::get('/product-all','ProductController@product_all');
 
 //---Admin
 Route::get('/admin-login','AdminController@login');//Trang đăng nhập của nó (admin) là {admin-login} , của nó (index) là {login}
@@ -148,3 +159,11 @@ Route::get('/delete-product/{product_id}','ProductController@delete_product'); /
 
     Route::post('/save-product','ProductController@save_product');
     Route::post('/update-product/{product_id}','ProductController@update_product');
+
+///Cart
+Route::post('/save-cart','CartController@save_cart');
+
+//Checkout
+Route::get('/login-checkout','CheckoutController@login_checkout');
+Route::get('/register','CheckoutController@register');
+Route::post('/register-customer','CheckoutController@register_customer');

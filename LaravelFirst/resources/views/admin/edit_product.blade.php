@@ -20,7 +20,7 @@
     </div>
     <div class="form-group">
       <label for="pwd">Description:</label>
-      <textarea class="form-control" rows="5" name="product_desc">{{$pro->product_desc}}</textarea>
+      <textarea  id="ckeditor3" class="form-control" rows="5" name="product_desc">{{$pro->product_desc}}</textarea>
     </div>
     <div class="form-group">
       <label for="pwd">Content:</label>
@@ -59,7 +59,7 @@
             <option value="1">Nổi bật không</option>
         </select>
     </div>
-    <button type="submit" name="add_product" class="btn btn-primary">Update</button>
+    <button type="submit" name="add_product" class="btn btn-success">Update</button>
     <?php
     $message = Session::get('message');
     if($message){

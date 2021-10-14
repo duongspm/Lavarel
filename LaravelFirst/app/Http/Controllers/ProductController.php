@@ -7,24 +7,36 @@ use DB;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use Session;
+session_start();
 
 class ProductController extends Controller
 {
     //
+    public function CheckLogin()
+    {
+        $admin_id=Session::get('admin_id');
+        if($admin_id){
+            return Redirect::to('dashboard');
+        }else{
+            return Redirect::to('admin-login')->send();
+        }
+    }
     public function add_product()
     {
-        $cate_product =DB::table('tbl_category_product')->orderby('category_id','desc')->get();
-        $brand_product =DB::table('tbl_brand')->orderby('brand_id','desc')->get();
+        $this->CheckLogin();
+        $cate_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
+        $brand_product = DB::table('tbl_brand')->orderby('brand_id','desc')->get();
         return view('admin.add_product')->with('cate_product',$cate_product)-> with('brand_product',$brand_product);
     }
     public function all_product()
     {
-        $all_product=DB::table('tbl_product')
+        //$this->CheckLogin();
+        $all_product = DB::table('tbl_product')
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
         ->join('tbl_brand','tbl_brand.brand_id','=','tbl_product.brand_id')
         ->orderby('tbl_product.product_id','desc')->get();
         $manager_product=view('admin.all_product')->with('all_product',$all_product); //goi lai theo ten file da tao, $all_product ở ngoài sẽ đc gán vào all_product ở trong
-        return view('admin_layout')->with('admin.all_product',$manager_product); // cái trang admin_layout sẽ chứa brand_product lun được gán vào biến $manager_product
+        return view('admin_layout')->with('admin.all_product',$manager_product); //
     }
     public function save_product(Request $request)
     {
@@ -80,6 +92,7 @@ class ProductController extends Controller
     }
     public function update_product(Request $request, $product_id)//request dùng để lấy yêu cầu dữ liệu
     {
+        $this->CheckLogin();
         $data = array();
         $data['product_name'] = $request->product_name;
         $data['product_price'] = $request->product_price;
@@ -110,5 +123,45 @@ class ProductController extends Controller
         DB::table('tbl_product')->where('product_id',$product_id)->delete();
         Session::put('message','XÓA sản phẩm thành công rồi nha');
         return Redirect::to('all-product');
+    }
+    //Hết chức năng admin rồi nha
+    public function product_details($product_id)
+    {
+        $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get();
+        $brand_product = DB::table('tbl_brand')->where('brand_status','0')->orderby('brand_id','desc')->get();
+        $details_product = DB::table('tbl_product')
+        ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
+        ->join('tbl_brand','tbl_brand.brand_id','=','tbl_product.brand_id')
+        ->where('tbl_product.product_id',$product_id)->get();
+        
+        foreach($details_product as $key => $value)
+        {
+            $category_id = $value->category_id;
+        }
+        $related_product = DB::table('tbl_product')
+        ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
+        ->join('tbl_brand','tbl_brand.brand_id','=','tbl_product.brand_id')
+        ->where('tbl_category_product.category_id',$category_id)->whereNotIn('tbl_product.product_id',[$product_id])->get();
+
+        return view('pages.product.show_details') 
+            -> with('cate_product',$cate_product)
+            -> with('brand_product',$brand_product)
+            -> with('details_product',$details_product)
+            -> with('relate',$related_product);
+    }
+    public function product_all()
+    {
+        //$this->CheckLogin();
+        $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get();
+        $brand_product = DB::table('tbl_brand')->where('brand_status','0')->orderby('brand_id','desc')->get();
+        
+        $all_product = DB::table('tbl_product')
+        ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
+        ->join('tbl_brand','tbl_brand.brand_id','=','tbl_product.brand_id')
+        ->orderby('tbl_product.product_id','desc')->get();
+        return view('pages.product.product_all')
+            -> with('cate_product',$cate_product)
+            -> with('brand_product',$brand_product)
+            -> with('all_product',$all_product); //
     }
 }

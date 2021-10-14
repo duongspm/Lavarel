@@ -3,10 +3,11 @@
 <div class="container">
   <h2>List Brand</h2> 
          
-  <table class="table table-bordered">
+  <table class="table table-bordered" id="myTable">
     <thead>
       <tr>
         <th>Name</th>
+        <th>Image</th>
         <th>Desc</th>
         <th>Status</th>
       </tr>
@@ -15,9 +16,9 @@
       @foreach($all_brand_product as $key => $cate_pro)
       <tr>
         <td>{{$cate_pro->brand_name}}</td>
+        <td><img src="public/uploads/brands/{{$cate_pro->brand_image}}" height="100" width="100"></td>
         <td>
-        {{$cate_pro->brand_desc}}
-          
+          {!!$cate_pro->brand_desc!!}
         </td>
         <td>
           <?php

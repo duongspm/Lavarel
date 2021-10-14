@@ -2,8 +2,8 @@
 @section('dashboard')
 <div class="container">
   <h2>List Product</h2> 
-         
-  <table class="table table-hover">
+  
+  <table class="table table-hover" id="myTable">
     <thead>
       <tr>
         <th>Name</th>
@@ -22,8 +22,8 @@
         <td>{{$pro->product_name}}</td>
         <td><img src="public/uploads/products/{{$pro->product_image}}" height="100" width="100"></td>
         <td>{{$pro->product_price}}</td>
-        <td>{{$pro->product_desc}}</td>
-        <td>{{$pro->product_content}}</td>
+        <td>{!!$pro->product_desc!!}</td>
+        <td>{!!$pro->product_content!!}</td>
         <td>{{$pro->category_name}}</td>
         <td>{{$pro->brand_name}}</td>
         <td>
@@ -48,6 +48,7 @@
     </tbody>
   </table>
 </div>
+
 <?php
     $message = Session::get('message');
     if($message){

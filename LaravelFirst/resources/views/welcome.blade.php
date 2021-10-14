@@ -48,10 +48,12 @@
 	<meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
     <link rel="apple-touch-icon" href="{{asset('fontend/img/apple-icon.png')}}">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('fontend/img/favicon.ico')}}">
-
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    
     <link rel="stylesheet" href="{{asset('fontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('fontend/css/templatemo.css')}}">
     <link rel="stylesheet" href="{{asset('fontend/css/custom.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
@@ -60,6 +62,12 @@
     <link href="{{asset('fontend/css/aos.min.css')}}" rel="stylesheet">
     <link href="{{asset('fontend/css/swiper.css')}}" rel="stylesheet">
     <link href="{{asset('fontend/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('fontend/css/slider-brand.css')}}" rel="stylesheet"><!-- Slider-brand -->
+
+    <link href="{{asset('fontend/css/cart.scss')}}" rel="stylesheet"><!--Cart -->
+    
+    <link href="{{asset('fontend/css/login.css')}}" rel="stylesheet"><!--Login -->
+    <link href="{{asset('fontend/css/register.css')}}" rel="stylesheet"><!--Register -->
 
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
@@ -92,11 +100,11 @@
 
 
     <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow">
+    <nav class="navbar navbar-expand-lg navbar-light shadow ">
         <div class="container d-flex justify-content-between align-items-center">
 
-            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
-                Zay
+            <a class="navbar-brand text-success logo h1 align-self-center" href="{{URL::to('/home')}}">
+                Camper Auction
             </a>
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -113,10 +121,13 @@
                             <a class="nav-link" href="about.html">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shop.html">Shop</a>
+                            <a class="nav-link" href="{{URL::to('/product-all')}}">Shop</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{URL::to('/login-checkout')}}">Acount</a>
                         </li>
                     </ul>
                 </div>
@@ -169,6 +180,65 @@
     
 
     <!-- Start Footer -->
+    <!--map-locationMap -->
+    <div class="location-modal-wrap shadow hidepage" style="display:none;">
+        <div class="location-modal-wrap-overlay"></div>
+        <div class="location-modal-item">
+            <div class="location-modal-container">
+            <div class="location-modal">
+                <div id="locationMap"></div>
+                
+                        
+            </div>
+            
+                <div class="card-body">
+                <h3>Where are you now?</h3>
+                <div class="address text-muted small letter-spacing-1" id="location-address-display"></div>
+                <div class="location-modal-close bg-primary text-center"><i class="fal fa-times">&nbsp;</i></div>
+            </div>
+        
+            </div>
+        </div>
+    </div>
+
+    <!-- Location -->
+    <section class="location text-light py-5">
+        <div class="container" data-aos="zoom-in">
+            <div class="row">
+                <div class="col-lg-3 d-flex align-items-center">
+                    <div class="p-2"><i class="far fa-map fa-3x"></i></div>
+                    <div class="ms-2">
+                        <h6>ADDRESS</h6>
+                        <p>Teuku Umar ST. 1919</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 d-flex align-items-center" >
+                    <div class="p-2"><i class="fas fa-mobile-alt fa-3x"></i></div>
+                    <div class="ms-2">
+                        <h6>CALL FOR QUERY</h6>
+                        <p>(800) 265  216 2020</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 d-flex align-items-center" >
+                    <div class="p-2"><i class="far fa-envelope fa-3x"></i></div>
+                    <div class="ms-2">
+                        <h6>SEND US MESSAGE</h6>
+                        <p>infodemofile@example.com</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 d-flex align-items-center" >
+                    <div class="p-2"><i class="far fa-clock fa-3x"></i></div>
+                    <div class="ms-2">
+                        <h6>OPENING HOURS</h6>
+                        <p>09:00 AM - 18:00 PM</p>
+                    </div>
+                </div>
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </section> <!-- end of location -->
+
+
+    <!--map-modal end -->
     <footer class="bg-dark" id="tempaltemo_footer">
         <div class="container">
             <div class="row">
@@ -262,7 +332,34 @@
 
     </footer>
     <!-- End Footer -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn" title="Lên đỉnh nào !!">
+        <!-- <img src="assets/images/up-arrow.png" alt="alternative"> -->
+        <!-- <img src="{{('fontend/images/up-arrow.png')}}" alt="alternative"> -->
+      ^Top
+    </button>
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
 
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        }
+        </script>
+    <!-- end of back to top button -->
     <!-- Start Script -->
     <script src="{{asset('fontend/js/jquery-1.11.0.min.js')}}"></script>
     <script src="{{asset('fontend/js/jquery-migrate-1.2.1.min.js')}}"></script>
@@ -274,6 +371,11 @@
     <script src="{{asset('fontend/js/swiper.min.js')}}"></script><!-- Swiper for image and text sliders -->
     <script src="{{asset('fontend/js/aos.js')}}"></script><!-- AOS on Animation Scroll -->
     <script src="{{asset('fontend/js/script.js')}}"></script>  <!-- Custom scripts -->
+    <script src="{{asset('fontend/js/product.js')}}"></script><!-- Product scripts -->
+    <script src="{{asset('fontend/js/slider-brand.js')}}"></script><!-- Slider-brand -->
+    <script src="{{asset('fontend/js/cart.js')}}"></script><!-- Cart -->
+    <script src="{{asset('fontend/js/login.js')}}"></script><!-- Login -->
+    
     <!-- End Script -->
 </body>
 
