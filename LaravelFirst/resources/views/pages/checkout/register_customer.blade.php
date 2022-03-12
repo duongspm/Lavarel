@@ -1,5 +1,6 @@
 @extends('welcome')
 @section ('content')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div id="right">
     <div class="registers">
         <div class="registers_title">
@@ -55,8 +56,8 @@
                                 <div class="gender">
                                     <input name="customer_gender" id="gender_m" type="radio" name="gender" value="m">
                                     <label for="gender_m">
-                                        <span class="sp_input"></span>
-                                        <span class="sp_lable">Nam</span>
+                                        <span class="sp_input">Nam</span>
+                                        <span class="sp_lable"></span>
                                     </label>
                                 </div>
                                 <div class="gender">

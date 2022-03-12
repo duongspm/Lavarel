@@ -1,5 +1,6 @@
 @extends('admin_layout')
 @section('dashboard')
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <div class="container">
   <h2>Add Category Product</h2>
   <form action="{{URL::to('/save-category-product')}}" method="post" enctype="multipart/form-data">
@@ -26,13 +27,19 @@
         </select>
     </div>
     <button type="submit" name="add_category_product" class="btn btn-success">Submit</button>
-    <?php
-    $message = Session::get('message');
-    if($message){
-      echo $message;
-      Session::put('message',null);
-    }
-    ?>
+    <br>
+    <div class='alert alert-success'>
+        <strong></strong> 
+        <?php
+          $message = Session::get('message');
+          if($message){
+            echo  $message;
+            Session::put('message',null);
+          }
+          ?> 
+        </div>
+    
   </form>
 </div>
 @endsection
+

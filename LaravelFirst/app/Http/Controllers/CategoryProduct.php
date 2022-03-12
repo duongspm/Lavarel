@@ -48,12 +48,12 @@ class CategoryProduct extends Controller
             $get_image->move('public/uploads/category',$new_image); //dư cái public nè, nó tự động gọi đến public r nên để v là dư nó sẽ tự tạo thêm 1 folder public nữa
             $data['category_image'] = $new_image;
             DB::table('tbl_category_product')->insert($data);
-            Session::put('message','thanh cong hay thanh thu thi khong biet');
+            Session::put('message','Thêm lọai sản phẩm thành công');
             return Redirect::to('add-category-product');
         }
         $data['category_image']='';
         DB::table('tbl_category_product')->insert($data);
-        Session::put('message','thanh cong hay thanh thu thi khong biet');
+        Session::put('message','Thêm lọai sản phẩm thành công');
         return Redirect::to('add-category-product');
     }
     //update status category product
@@ -94,7 +94,7 @@ class CategoryProduct extends Controller
             $get_image->move('public/uploads/category',$new_image); //dư cái public nè, nó tự động gọi đến public r nên để v là dư nó sẽ tự tạo thêm 1 folder public nữa
             $data['category_image'] = $new_image;
             DB::table('tbl_category_product')->where('category_id',$category_product_id)->update($data);
-            Session::put('message','thanh cong hay thanh thu thi khong biet');
+            Session::put('message','Cập nhật danh mục sản phẩm thành công rồi nha');
             return Redirect::to('all-category-product');
         }
 

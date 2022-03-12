@@ -34,8 +34,33 @@ class CheckoutController extends Controller
 
         $customer_id = DB::table('tbl_customers')->insertGetId($data);
 
-        // Session::put('customer_id',$customer_id);
+        Session::put('customer_id',$customer_id);
         // Session::put('customer_fullname',$customer_fullname);
         return Redirect::to('/login-checkout');
+    }
+ 
+    public function login_customer(Request $request)
+    {
+        $email = $request->email;
+        $password = $request->password;
+        $result = DB::table('tbl_customers')->where('customer_email',$email)->where('customer_password',$password)->first();
+       
+        if($result)
+        {
+            
+            return Redirect::to('/home');
+        }
+        else
+        {
+            return Redirect::to('/login-checkout');
+        }
+        Session::put('customer_id',$result->$customer_id);
+        // Session::put('customer_fullname',$customer_fullname);
+        
+    }
+
+    public function logout(){
+        Session::flush();
+        return Redirect('/login-checkout');
     }
 }

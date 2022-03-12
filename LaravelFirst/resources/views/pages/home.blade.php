@@ -71,10 +71,10 @@
             </div>
         </div>
         <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
-            <i class="fas fa-chevron-left"></i>
+            <i class="fa fa-chevron-left"></i>
         </a>
         <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
-            <i class="fas fa-chevron-right"></i>
+            <i class="fa fa-chevron-right"></i>
         </a>
     </div>
     <!-- End Banner Hero -->
@@ -119,22 +119,22 @@
                         <div class="container" data-aos="fade-up">
                             <div class="row g-5">
                                 <div class="col-6 text-start" >
-                                    <i class="fas fa-briefcase fa-2x text-start"></i>
+                                    <i class="fa fa-briefcase fa-2x text-start"></i>
                                     <h2 class="purecounter" data-purecounter-start="0" data-purecounter-end="1258" data-purecounter-duration="3">1</h2>
                                     <p>PROJECTS COMPLETED</p>
                                 </div>
                                 <div class="col-6" >
-                                    <i class="fas fa-award fa-2x"></i>
+                                    <i class="fa fa-award fa-2x"></i>
                                     <h2 class="purecounter" data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="3">1</h2>
                                     <p>AWARDS</p>
                                 </div>
                                 <div class="col-6">
-                                    <i class="fas fa-users fa-2x"></i>
+                                    <i class="fa fa-users fa-2x"></i>
                                     <h2 class="purecounter" data-purecounter-start="0" data-purecounter-end="1255" data-purecounter-duration="3">1</h2>
                                     <p>CUSTOMER ACTIVE</p>
                                 </div>
                                 <div class="col-6">
-                                    <i class="fas fa-clock fa-2x"></i>
+                                    <i class="fa fa-clock fa-2x"></i>
                                     <h2 class="purecounter" data-purecounter-start="0" data-purecounter-end="1157" data-purecounter-duration="3">1</h2>
                                     <p>GOOD REVIEWS</p>
                                 </div>
@@ -256,17 +256,17 @@
         <div class="container-fluid">  
             <div class="row text-light">
                 <div class="col-lg-4 text-center p-5" data-aos="zoom-in">
-                    <i class="fas fa-tachometer-alt fa-3x p-2"></i>
+                    <i class="fa fa-download fa-3x p-2"></i>
                     <h4 class="py-3">Download 1 GBPS</h4>
                     <p class="para-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam odit consequatur doloribus natus in suscipit!</p>
                 </div>
                 <div class="col-lg-4 text-center p-5"  data-aos="zoom-in">
-                    <i class="fas fa-clock fa-3x p-2"></i>
+                    <i class="fa fa-clock fa-3x p-2"></i>
                     <h4 class="py-3">99% Internet Uptime</h4>
                     <p class="para-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam odit consequatur doloribus natus in suscipit!</p>
                 </div>
                 <div class="col-lg-4 text-center p-5 text-dark"  data-aos="zoom-in"> 
-                    <i class="fas fa-headset fa-3x p-2"></i>
+                    <i class="fab fa-headset fa-3x p-2"></i>
                     <h4 class="py-3">24/7 Support </h4>
                     <p class="para-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam odit consequatur doloribus natus in suscipit!</p>
                 </div>
@@ -336,42 +336,42 @@
             <div class="row gy-4 py-2" data-aos="zoom-in">
                 <div class="col-lg-4">
                     <div class="card bg-transparent">
-                        <i class="fas fa-home fa-2x"></i>
+                        <i class="fa fa-home fa-2x"></i>
                         <h4 class="py-2">HOME BROADBAND</h4>
                         <p class="para-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam odit consequatur doloribus natus in suscipit!</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="card bg-transparent">
-                        <i class="fas fa-wifi fa-2x"></i>
+                        <i class="fa fa-wifi fa-2x"></i>
                         <h4 class="py-2"> HOME WIFI</h4>
                         <p class="para-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam odit consequatur doloribus natus in suscipit!</p>
                     </div>                    
                 </div>
                 <div class="col-lg-4">
                     <div class="card bg-transparent">
-                        <i class="fas fa-phone fa-2x"></i>
+                        <i class="fa fa-phone fa-2x"></i>
                         <h4 class="py-2">HOME BROADBAND</h4>
                         <p class="para-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam odit consequatur doloribus natus in suscipit!</p>
                     </div>                    
                 </div>
                 <div class="col-lg-4">
                     <div class="card bg-transparent">
-                        <i class="fas fa-mobile fa-2x"></i>
+                        <i class="fa fa-mobile fa-2x"></i>
                         <h4 class="py-2">MOBILE CONNECTION</h4>
                         <p class="para-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam odit consequatur doloribus natus in suscipit!</p>
                     </div>                    
                 </div>
                 <div class="col-lg-4">
                     <div class="card bg-transparent">
-                        <i class="fas fa-home fa-2x"></i>
+                        <i class="fa fa-home fa-2x"></i>
                         <h4 class="py-2">SECURITY</h4>
                         <p class="para-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam odit consequatur doloribus natus in suscipit!</p>
                     </div>                    
                 </div>
                 <div class="col-lg-4">
                     <div class="card bg-transparent">
-                        <i class="fas fa-tv fa-2x"></i>
+                        <i class="fa fa-tv fa-2x"></i>
                         <h4 class="py-2">TV SETUP BOX</h4>
                         <p class="para-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam odit consequatur doloribus natus in suscipit!</p>
                     </div>                    

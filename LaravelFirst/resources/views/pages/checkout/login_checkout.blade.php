@@ -1,10 +1,13 @@
 @extends('welcome')
 @section ('content')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="logins">
     <div class="logins_title">
         <h2>Đăng nhập</h2>
         <p>Nếu bạn đã có tài khoản, đăng nhập tại đây</p>
     </div>
+    <form action="{{URL::to('/login-customer')}}" method="POST">
+    {{csrf_field()}}
     <div class="logins_main">
         <div class="login_col">
             <div class="login_main">
@@ -54,5 +57,6 @@
             </div>
         </div>
     </div>
+    </form>
 </div>
 @endsection

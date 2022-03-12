@@ -1,7 +1,7 @@
 @extends('admin_layout')
 @section('dashboard')
 <div class="container">
-  <h2>List Category Product</h2> 
+  <h2 class="main-title">List Category Product</h2> 
          
   <table class="table table-bordered" id="myTable">
     <thead>
@@ -15,7 +15,7 @@
     <tbody>
       @foreach($all_category_product as $key => $cate_pro)
       <tr>
-        <td>{{$cate_pro->category_name}}</td>
+        < >{{$cate_pro->category_name}}</td>
         <td><img src="public/uploads/category/{{$cate_pro->category_image}}" height="100" width="100"></td>
         <td>
         {!!$cate_pro->category_desc!!}
@@ -35,8 +35,8 @@
           ?>
         </td>
         <td>
-            <a href="{{URL::to('/edit-category-product/'.$cate_pro->category_id)}}"><i class="fas fa-edit"></i></a>
-            <a onclick="return confirm('Xóa giởn hay chơi?? Suy nghĩ lại còn kịp')" href="{{URL::to('/delete-category-product/'.$cate_pro->category_id)}}"><i class="far fa-trash-alt"></i></a>
+            <a data-toggle="tooltip" title="Update!" href="{{URL::to('/edit-category-product/'.$cate_pro->category_id)}}"><i class="fas fa-edit"></i></a>
+            <a data-toggle="tooltip" data-placement="bottom" title="Delete!" onclick="return confirm('Xóa giởn hay chơi?? Suy nghĩ lại còn kịp')" href="{{URL::to('/delete-category-product/'.$cate_pro->category_id)}}"><i class="far fa-trash-alt"></i></a>
         </td>
       </tr>
       @endforeach
@@ -46,8 +46,17 @@
 <?php
     $message = Session::get('message');
     if($message){
-      echo $message;
+      echo $message ;
       Session::put('message',null);
     }
     ?> 
+    <script>
+      $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+      });
+    </script>
             @endsection
+
+            <!-- <div class="alert alert-success">
+  <strong>Success!</strong> Indicates a successful or positive action.
+</div> -->

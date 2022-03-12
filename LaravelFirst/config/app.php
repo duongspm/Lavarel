@@ -162,6 +162,10 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        //Mình thêm nề
+        Laravel\Socialite\SocialiteServiceProvider::class,
+       
+        //Hết gòi
         /*
          * Package Service Providers...
          */
@@ -225,7 +229,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        //Mình thêm nề
+        'Socialite'=> Laravel\Socialite\Facades\Socialite::class,
+        //Hết gòi
     ],
 
 ];

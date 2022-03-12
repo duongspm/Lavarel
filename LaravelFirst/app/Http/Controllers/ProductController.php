@@ -59,12 +59,12 @@ class ProductController extends Controller
             $data['product_image'] = $new_image;
             DB::table('tbl_product')->insert($data);
 
-            Session::put('message','thanh cong hay thanh thu thi khong biet');
+            Session::put('message','Thêm sản phẩm thành công !!');
             return Redirect::to('add-product');
         }
         $data['product_image']='';
         DB::table('tbl_product')->insert($data);
-        Session::put('message','thanh cong hay thanh thu thi khong có hình ảnh sản phẩm');
+        Session::put('message','Thêm sản phẩm thành công !!');
         return Redirect::to('add-product');
     }
     //update status brand product
@@ -111,11 +111,11 @@ class ProductController extends Controller
             $data['product_image'] = $new_image;
             DB::table('tbl_product')->where('product_id',$product_id)->update($data);
 
-            Session::put('message','thanh cong hay thanh thu thi khong biet');
+            Session::put('message','Cập nhật thông tin sản phẩm thành công !!');
             return Redirect::to('all-product');
         }
         DB::table('tbl_product')->where('product_id',$product_id)->update($data);
-        Session::put('message','thanh cong hay thanh thu thi khong có hình ảnh sản phẩm');
+        Session::put('message','Cập nhật thông tin sản phẩm thành công !!');
         return Redirect::to('all-product');
     }
     public function delete_product($product_id)

@@ -120,12 +120,15 @@ Route::get('/admin-login','AdminController@login');//Trang đăng nhập của n
 Route::get('/index','AdminController@index');//Trang chủ admin , của nó là (dashboard) mình là {index}, của nó là (show_dashboard) mình là {index}
 Route::get('/logout','AdminController@logout');//Đăng xuất nè
 Route::post('/admin-dashboard','AdminController@dashboard'); //Giống y chang
+//login-fb
+Route::get('/login-facebook','AdminController@login_facebook');//Đăng xuất nè
+Route::post('/admin-login/callback','AdminController@callback_facebook');
 
-//Category Product
-Route::get('/add-category-product','CategoryProduct@add_category_product');
-Route::get('/all-category-product','CategoryProduct@all_category_product');
-Route::get('/edit-category-product/{category_product_id}','CategoryProduct@edit_category_product');
-Route::get('/delete-category-product/{category_product_id}','CategoryProduct@delete_category_product'); // ten ham function nen de dau gach duoi " _ "
+    //Category Product
+    Route::get('/add-category-product','CategoryProduct@add_category_product');
+    Route::get('/all-category-product','CategoryProduct@all_category_product');
+    Route::get('/edit-category-product/{category_product_id}','CategoryProduct@edit_category_product');
+    Route::get('/delete-category-product/{category_product_id}','CategoryProduct@delete_category_product'); // ten ham function nen de dau gach duoi " _ "
 
     //update status category product
     Route::get('/unactive-category-product/{category_product_id}','CategoryProduct@unactive_category_product');//tạo thêm môt tham số { category_product_id } tên gì cũng đc để dễ phân biệt
@@ -165,5 +168,7 @@ Route::post('/save-cart','CartController@save_cart');
 
 //Checkout
 Route::get('/login-checkout','CheckoutController@login_checkout');
+Route::get('/logout','CheckoutController@logout');
 Route::get('/register','CheckoutController@register');
 Route::post('/register-customer','CheckoutController@register_customer');
+Route::post('/login-customer','CheckoutController@login_customer');

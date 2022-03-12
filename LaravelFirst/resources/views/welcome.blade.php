@@ -72,6 +72,7 @@
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="{{asset('fontend/css/fontawesome.min.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" href="{{asset('fontend/images/favicon.png')}}">
 </head>
@@ -88,10 +89,10 @@
                     <a class="navbar-sm-brand text-light text-decoration-none" href="tel:0726178211">0397652611</a>
                 </div>
                 <div>
-                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
-                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
-                    <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
-                    <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
+                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fa fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fa fa-twitter fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin fa-sm fa-fw"></i></a>
                 </div>
             </div>
         </div>
@@ -126,9 +127,24 @@
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact</a>
                         </li>
+                        <?php
+                            $customer_id = Session::get('customer_id');
+                            if($customer_id!=NULL)
+                            {
+                        ?>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{URL::to('/logout')}}"> <i class="fa fa-fw fa-user text-dark mr-3"></i>Logout</a>
+                        </li>
+                         <?php
+                            }else{
+                            ?>     
+                            <li class="nav-item">
                             <a class="nav-link" href="{{URL::to('/login-checkout')}}">Acount</a>
                         </li>
+                            <?php
+                            }
+                            ?>      
+                        
                     </ul>
                 </div>
                 <div class="navbar align-self-center d-flex">
@@ -149,7 +165,7 @@
                     </a>
                     <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
-                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
                     </a>
                 </div>
             </div>
@@ -206,28 +222,28 @@
         <div class="container" data-aos="zoom-in">
             <div class="row">
                 <div class="col-lg-3 d-flex align-items-center">
-                    <div class="p-2"><i class="far fa-map fa-3x"></i></div>
+                    <div class="p-2"><i class="fa fa-map fa-3x"></i></div>
                     <div class="ms-2">
                         <h6>ADDRESS</h6>
-                        <p>Teuku Umar ST. 1919</p>
+                        <p>Trần Văn Ơn, TDM, Bình Dương</p>
                     </div>
                 </div>
                 <div class="col-lg-3 d-flex align-items-center" >
-                    <div class="p-2"><i class="fas fa-mobile-alt fa-3x"></i></div>
+                    <div class="p-2"><i class="fa fa-mobile-alt fa-3x"></i></div>
                     <div class="ms-2">
                         <h6>CALL FOR QUERY</h6>
-                        <p>(800) 265  216 2020</p>
+                        <p>(+84) 396 752 611</p>
                     </div>
                 </div>
                 <div class="col-lg-3 d-flex align-items-center" >
-                    <div class="p-2"><i class="far fa-envelope fa-3x"></i></div>
+                    <div class="p-2"><i class="fa fa-envelope fa-3x"></i></div>
                     <div class="ms-2">
                         <h6>SEND US MESSAGE</h6>
-                        <p>infodemofile@example.com</p>
+                        <p>camperauction@gmail.com</p>
                     </div>
                 </div>
                 <div class="col-lg-3 d-flex align-items-center" >
-                    <div class="p-2"><i class="far fa-clock fa-3x"></i></div>
+                    <div class="p-2"><i class="fa fa-clock fa-3x"></i></div>
                     <div class="ms-2">
                         <h6>OPENING HOURS</h6>
                         <p>09:00 AM - 18:00 PM</p>
@@ -247,7 +263,7 @@
                     <h2 class="h2 text-success border-bottom pb-3 border-light logo">Zay Shop</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li>
-                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            <i class="fa fa-map-signs"></i>
                             123 Consectetur at ligula 10660
                         </li>
                         <li>
@@ -294,16 +310,16 @@
                 <div class="col-auto me-auto">
                     <ul class="list-inline text-left footer-icons">
                         <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fa fa-facebook-f fa-lg fa-fw"></i></a>
                         </li>
                         <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fa fa-instagram fa-lg fa-fw"></i></a>
                         </li>
                         <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
                         </li>
                         <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fa fa-linkedin fa-lg fa-fw"></i></a>
                         </li>
                     </ul>
                 </div>

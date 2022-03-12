@@ -1,12 +1,14 @@
 @extends('admin_layout')
 @section('dashboard')
 <div class="container">
-  <h2>Add Product</h2>
-  <form action="{{URL::to('/save-product')}}" method="post" enctype="multipart/form-data">
+  <h2 class="main-title">Add Product</h2>
+  <form class="form" action="{{URL::to('/save-product')}}" method="post" enctype="multipart/form-data">
   {{csrf_field()}}  
   <div class="form-group">
-      <labe> Name</label>
-      <input type="text" class="form-control" placeholder=" Name" name="product_name">
+      <labe class="form-label-wrapper"> 
+        <p class="form-label">Name</p>
+      <input type="text" class="form-input" placeholder="Name product" name="product_name">
+      </label>
     </div>
     <div class="form-group">
       <labe> Image</label>

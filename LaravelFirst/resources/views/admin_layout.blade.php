@@ -14,8 +14,32 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
+  <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+  <!-- Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="{{asset('backend/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('backend/css/fontawesome-all.min.css')}}" rel="stylesheet">
+    <link href="{{asset('backend/css/aos.min.css')}}" rel="stylesheet">
+    <link href="{{asset('backend/css/swiper.css')}}" rel="stylesheet">
+    <link href="{{asset('backend/css/style.css')}}" rel="stylesheet">
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <!-- style biblab -->
+  <!-- <link rel="stylesheet" href="https://script.viserlab.com/bidlab/assets/admin/css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="https://script.viserlab.com/bidlab/assets/admin/css/vendor/bootstrap-toggle.min.css"> -->
+  <!-- <link rel="stylesheet" href="https://script.viserlab.com/bidlab/assets/admin/css/all.min.css"> -->
+  <!-- <link rel="stylesheet" href="https://script.viserlab.com/bidlab/assets/admin/css/line-awesome.min.css">
+  <link rel="stylesheet" href="https://script.viserlab.com/bidlab/assets/admin/css/bootstrap-iconpicker.min.css">
+  <link rel="stylesheet" href="https://script.viserlab.com/bidlab/assets/admin/css/vendor/nice-select.css">
+  <link rel="stylesheet" href="https://script.viserlab.com/bidlab/assets/admin/css/vendor/jquery-jvectormap-2.0.5.css">
+  <link rel="stylesheet" href="https://script.viserlab.com/bidlab/assets/admin/css/vendor/bootstrap-clockpicker.min.css"> -->
+
 </head>
 
 <body>

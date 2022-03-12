@@ -1,11 +1,11 @@
 @extends('admin_layout')
 @section('dashboard')
 <div class="container">
-  <h2>List Product</h2> 
-  
-  <table class="table table-hover" id="myTable">
+  <h2 class="main-title">List Product</h2> 
+  <div class="users-table table-wrapper">
+  <table class="posts-table" id="myTable">
     <thead>
-      <tr>
+      <tr class="users-table-info">
         <th>Name</th>
         <th>Image</th>
         <th>Price</th>
@@ -47,6 +47,7 @@
       @endforeach
     </tbody>
   </table>
+  </div>
 </div>
 
 <?php
